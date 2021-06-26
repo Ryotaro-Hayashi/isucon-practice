@@ -1,4 +1,4 @@
-# isucon7q
+# isuconで使うコマンドのメモ
 
 ## 作業ログ
 https://hackmd.io/EzK-6jVtQdGN-1DO6gaY0w
