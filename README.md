@@ -178,6 +178,23 @@ Name：関数名
 
 `(pprof) list 関数名 or パッケージ名`
 
+## DB
+
+設定ファイルの確認
+```
+mysql --help | grep "Default options" -A 1
+```
+
+各テーブルのデータ量（概算値）
+```
+select table_name, table_rows from information_schema.TABLES where table_schema = <データベース名 ex)"isucari">;
+```
+
+データベースを指定して各テーブルのインデックス一覧表示
+```
+USE <データベース名>; select TABLE_NAME, COLUMN_NAME, INDEX_NAME from INFORMATION_SCHEMA.STATISTICS where TABLE_SCHEMA = <データベース名 ex)"isucari">;
+```
+
 ## 便利なコマンド
 jq（整形）
 ```
@@ -185,6 +202,23 @@ cat <ファイル名> | jq
 ```
 
 grep（検索）
+
+- ファイル検索
 ```
-cat <ファイル名> | grep <検索文字列>
+grep <検索文字列> -rn
 ```
+
+- ファイル内検索
+```
+grep <検索文字列> <ファイルパス>
+```
+
+lsof（ポートの確認）
+```
+sudo lsof -i:<ポート番号 ex)80>
+```
+
+## TODO
+- 複合インデックス
+- Netdata
+- pt-query-digest
