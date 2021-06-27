@@ -3,6 +3,11 @@
 ## 作業ログ
 https://hackmd.io/EzK-6jVtQdGN-1DO6gaY0w
 
+## バージョン管理
+以下を参考
+
+https://qiita.com/tamorieeeen/items/c24f8285448b607b12dd
+
 ## isuconユーザに変更
 ```
 su - isucon
@@ -216,6 +221,11 @@ grep <検索文字列> <ファイルパス>
 lsof（ポートの確認）
 ```
 sudo lsof -i:<ポート番号 ex)80>
+```
+
+os表示
+```
+cat /etc/*-release
 ```
 
 ## TODO
