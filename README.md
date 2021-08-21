@@ -135,6 +135,11 @@ $`sudo mv alp /usr/local/bin/alp`
 #### ベンチマークを実行してalpで結果表示
 $`cat <access.logへのパス ex) /var/log/nginx/access.log> | alp ltsv`
 
+#### 正規表現でまとめたりカラムでソート
+```
+sudo cat /var/log/nginx/access.log | alp ltsv --sort=sum -m "/api/condition/*, /api/isu/\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b/icon, /api/isu/\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b/graph, /isu/\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b/condition, /isu/\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b/graph, /isu/\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b"
+```
+
 ## pprofで解析
 
 CPUリソースを消費している箇所を解析できる
