@@ -103,9 +103,18 @@ http {
 ```
 フォーマット設定：https://github.com/tkuchiki/alp/blob/master/README.ja.md#log-format
 
+フォーマット変更実施
+```
+sudo nginx -t
+```
+
 Nginxを再起動
 ```
 sudo systemctl restart nginx
+```
+or
+```
+sudo nginx -s reload
 ```
 
 ## Alpで解析
